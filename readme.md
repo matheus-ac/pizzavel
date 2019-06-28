@@ -1,4 +1,30 @@
 
+Laravel - Api Simples Pizzaria - Teste Hotmilhas
+================================
+Construa uma API REST simples para uma pizzaria, a linguagem da API é livre, a aplicação que consumir a sua API deve ser capaz de incluir, alterar ou excluir pizzas com tamanhos e sabores variados, também deve ser capaz de criar pedidos para os clientes. Dica: utilize o número do telefone do cliente para identifica-lo e não se esqueça de armazenar o endereço de entrega.
+
+Installation
+------------
+
+Renomear .env.example para .env e configuere o banco de dados
+
+    
+Config Data Base
+    
+    DB_CONNECTION=mysql
+    DB_HOST=
+    DB_PORT=
+    DB_DATABASE=
+    DB_USERNAME=
+    DB_PASSWORD=
+
+Run 
+
+    composer install
+Run
+
+    php artisan migrate
+
 ## REST APIs
 ### [ /category](#category)
 |  					|          	|					|
