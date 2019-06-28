@@ -1,72 +1,584 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## REST APIs
+### [ /category](#category)
+|  					|          	|					|
+| ------------- 			| ------------	| -----------------------------------	|
+|- Criar categoria   			| `POST`	|[/category](#post-category)		|
+|- Listar todas categorias   		| `GET`		|[/category](#get-category)		|
+|- Exibir uma categoria especifica   	| `GET`    	|[/category/{id}](#get-categoryid)   	|
+|- Atualiar uma categoria   		| `PUT`    	|[/category/{id}](#put-categoryid)	|
+|- Remover uma categoria   		| `DELETE`   	|[/category/{id}](#delete-categoryid)	|
 
-## About Laravel
+### [ /product](#product)
+|  					|          	|					|
+| ------------- 			| ------------	| -----------------------------------	|
+|- Criar produto   			| `POST`	|[/product](#post-product)		|
+|- Listar todos produtos   		| `GET`		|[/product](#get-product)		|
+|- Exibir um produto especifico   	| `GET`    	|[/product/{id}](#get-productid)   	|
+|- Atualiar um produto   		| `PUT`    	|[/product/{id}](#put-productid)	|
+|- Remover um produto   		| `DELETE`   	|[/product/{id}](#delete-productid)	|
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### [ /flavor](#flavor)
+|  					|          	|					|
+| ------------- 			| ------------	| -----------------------------------	|
+|- Criar sabor   			| `POST`	|[/flavor](#post-flavor)		|
+|- Listar todos sabores   		| `GET`		|[/flavor](#get-flavor)			|
+|- Exibir um sabor especifico   	| `GET`    	|[/flavor/{id}](#get-flavorid)   	|
+|- Atualiar um sabor    		| `PUT`    	|[/flavor/{id}](#put-flavorid)		|
+|- Remover um sabor 	   		| `DELETE`   	|[/flavor/{id}](#delete-flavorid)	|
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### [ /client](#client)
+|  					|          	|					|
+| ------------- 			| ------------	| -----------------------------------	|
+|- Criar cliente   			| `POST`	|[/client](#post-client)		|
+|- Listar todos clientes   		| `GET`		|[/client](#get-client)			|
+|- Exibir um cliente especifico   	| `GET`    	|[/client/{telephone}](#get-clientid)   |
+|- Atualiar um cliente    		| `PUT`    	|[/client/{telephone}](#put-clientid)	|
+|- Remover um cliente 	   		| `DELETE`   	|[/client/{telephone}](#delete-clientid)|
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### [ /order](#client)
+|  					|          	|					|
+| ------------- 			| ------------	| -----------------------------------	|
+|- Criar pedido   			| `POST`	|[/order](#post-order)			|
+|- Listar todos pedidos   		| `GET`		|[/order](#get-order)			|
+|- Exibir um pedido especifico   	| `GET`    	|[/order/{id}](#get-orderid)   		|
+|- Remover um pedido 	   		| `DELETE`   	|[/order/{id}](#delete-orderid)		|
 
-## Learning Laravel
+## Request & Response Examples
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### /category
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### POST /category
 
-## Laravel Sponsors
+- Criar categoria
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+	- Example: http://localhost:8000/api/category
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Request:
 
-## Security Vulnerabilities
+    {
+        "name" : "Pizza"
+    }
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### GET /category
 
-## License
+- Listar todas categorias
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+	- Example: http://localhost:8000/api/category
+
+Response:
+
+	[  
+	   {  
+	      "id":1,
+	      "name":"Pizza",
+	      "created_at":"2019-06-27 18:31:00",
+	      "updated_at":"2019-06-27 18:31:00"
+	   },
+	   {  
+	      "id":2,
+	      "name":"Bebidas",
+	      "created_at":"2019-06-27 19:51:10",
+	      "updated_at":"2019-06-27 19:51:10"
+	   }
+	]
+
+
+
+### GET /category/id
+
+- Exibir uma categoria especifica
+
+	- Example: http://localhost:8000/api/category/2
+
+Response:
+
+	{  
+	   "id":2,
+	   "name":"Bebidas",
+	   "created_at":"2019-06-27 19:51:10",
+	   "updated_at":"2019-06-27 19:51:10"
+	}
+
+### PUT /category/id
+
+- Atualizar uma categoria
+	
+	- Example: http://localhost:8000/api/category/2
+
+Response:
+
+	{  
+	   "name":"Bebidas"
+	}
+
+### DELETE /category/id
+
+- Remover uma categoria
+
+	- Example: http://localhost:8000/api/category/2
+
+Response:
+
+	status code 200
+
+
+### /product
+
+### POST /product
+
+- Criar produto
+
+	- Example: http://localhost:8000/api/product
+
+
+
+Request:
+
+	 {  
+	   "name":"Pizza Grande",
+	   "price":19.99,
+	   "category_id":1
+	}
+
+### GET /product
+
+- Listar todos produtos
+
+	- Example: http://localhost:8000/api/product
+
+Response:
+
+	[
+	  {
+	    "id": 1,
+	    "name": "Pizza Grande",
+	    "price": 19.99,
+	    "category_id": 1,
+	    "created_at": "2019-06-28 00:17:52",
+	    "updated_at": "2019-06-28 00:17:52",
+	    "flavor": [
+	      {
+		"id": 1,
+		"name": "mussarela",
+		"category_id": 1,
+		"created_at": "2019-06-27 19:37:22",
+		"updated_at": "2019-06-27 19:37:22"
+	      },
+	      {
+		"id": 2,
+		"name": "napolitana",
+		"category_id": 1,
+		"created_at": "2019-06-27 20:37:35",
+		"updated_at": "2019-06-27 20:37:39"
+	      },
+	      {
+		"id": 3,
+		"name": "portuguesa",
+		"category_id": 1,
+		"created_at": "2019-06-27 20:37:50",
+		"updated_at": "2019-06-27 21:37:50"
+	      }
+	    ],
+	    "category": {
+	      "id": 1,
+	      "name": "Pizza",
+	      "created_at": "2019-06-27 18:31:00",
+	      "updated_at": "2019-06-27 18:31:00"
+	    }
+	  },
+	  {
+	    "id": 2,
+	    "name": "Pizza Media",
+	    "price": 15.99,
+	    "category_id": 1,
+	    "created_at": "2019-06-28 00:21:02",
+	    "updated_at": "2019-06-28 00:21:02",
+	    "flavor": [
+	      {
+		"id": 1,
+		"name": "mussarela",
+		"category_id": 1,
+		"created_at": "2019-06-27 19:37:22",
+		"updated_at": "2019-06-27 19:37:22"
+	      },
+	      {
+		"id": 2,
+		"name": "napolitana",
+		"category_id": 1,
+		"created_at": "2019-06-27 20:37:35",
+		"updated_at": "2019-06-27 20:37:39"
+	      },
+	      {
+		"id": 3,
+		"name": "portuguesa",
+		"category_id": 1,
+		"created_at": "2019-06-27 20:37:50",
+		"updated_at": "2019-06-27 21:37:50"
+	      }
+	    ],
+	    "category": {
+	      "id": 1,
+	      "name": "Pizza",
+	      "created_at": "2019-06-27 18:31:00",
+	      "updated_at": "2019-06-27 18:31:00"
+	    }
+	  },
+	  {
+	    "id": 4,
+	    "name": "Coca Cola 2L",
+	    "price": 9.99,
+	    "category_id": 2,
+	    "created_at": "2019-06-28 00:23:37",
+	    "updated_at": "2019-06-28 00:23:37",
+	    "flavor": [],
+	    "category": {
+	      "id": 2,
+	      "name": "Bebida",
+	      "created_at": "2019-06-28 00:22:16",
+	      "updated_at": "2019-06-28 00:22:16"
+	    }
+	  }
+	]
+
+
+
+### GET /product/id
+
+- Exibir um produto especifico
+
+	- Example: http://localhost:8000/api/product/2
+
+Response:
+
+	{
+	  "id": 2,
+	  "name": "Pizza Media",
+	  "price": 15.99,
+	  "category_id": 1,
+	  "created_at": "2019-06-28 00:21:02",
+	  "updated_at": "2019-06-28 00:21:02",
+	  "category": {
+	    "id": 1,
+	    "name": "Pizza",
+	    "created_at": "2019-06-27 18:31:00",
+	    "updated_at": "2019-06-27 18:31:00"
+	  },
+	  "flavor": [
+	    {
+	      "id": 1,
+	      "name": "mussarela",
+	      "category_id": 1,
+	      "created_at": "2019-06-27 19:37:22",
+	      "updated_at": "2019-06-27 19:37:22"
+	    },
+	    {
+	      "id": 2,
+	      "name": "napolitana",
+	      "category_id": 1,
+	      "created_at": "2019-06-27 20:37:35",
+	      "updated_at": "2019-06-27 20:37:39"
+	    },
+	    {
+	      "id": 3,
+	      "name": "portuguesa",
+	      "category_id": 1,
+	      "created_at": "2019-06-27 20:37:50",
+	      "updated_at": "2019-06-27 21:37:50"
+	    }
+	  ]
+	}
+### PUT /product/id
+
+- Atualizar um produto
+	
+	- Example: http://localhost:8000/api/product/1
+
+Response:
+
+	{  
+	   "price":29.99
+	}
+
+
+### DELETE /product/id
+
+- Remover um produto
+
+	- Example: http://localhost:8000/api/product/1
+
+Response:
+
+	status code 200
+
+### /flavor
+
+### POST /flavor
+
+- Criar sabor
+
+	- Example: http://localhost:8000/api/flavor
+
+
+
+Request:
+
+ 	{  
+	   "name":"mussarela",
+	   "category_id":1
+	}
+
+### GET /flavor
+
+- Listar todos sabores
+
+	- Example: http://localhost:8000/api/flavor
+
+Response:
+
+	[
+	  {
+	    "id": 1,
+	    "name": "mussarela",
+	    "category_id": 1,
+	    "created_at": "2019-06-27 19:37:22",
+	    "updated_at": "2019-06-27 19:37:22"
+	  },
+	  {
+	    "id": 2,
+	    "name": "napolitana",
+	    "category_id": 1,
+	    "created_at": "2019-06-27 20:37:35",
+	    "updated_at": "2019-06-27 20:37:39"
+	  },
+	  {
+	    "id": 3,
+	    "name": "portuguesa",
+	    "category_id": 1,
+	    "created_at": "2019-06-27 20:37:50",
+	    "updated_at": "2019-06-27 21:37:50"
+	  }
+	]
+
+
+### GET /flavor/id
+
+- Exibir um sabor especifico
+
+	- Example: http://localhost:8000/api/flavor/2
+
+Response:
+
+	{
+	  "id": 2,
+	  "name": "napolitana",
+	  "category_id": 1,
+	  "created_at": "2019-06-27 20:37:35",
+	  "updated_at": "2019-06-27 20:37:39"
+	}
+	
+### PUT /flavor/id
+
+- Atualizar um sabor
+	
+	- Example: http://localhost:8000/api/flavor/2
+
+Response:
+
+	{  
+	   "name":"mussarela ouro"
+	}
+
+
+### DELETE /flavor/id
+
+- Remover um sabor
+
+	- Example: http://localhost:8000/api/flavor/1
+
+Response:
+
+	status code 200
+
+### /client
+
+### POST /client
+
+- Criar
+
+	- Example: http://localhost:8000/api/client
+
+
+
+Request:
+
+	 {  
+	   "name":"Anthony Edward Stark Jr.",
+	   "telephone":31994726273
+	}
+
+### GET /client
+
+- Listar todos
+
+	- Example: http://localhost:8000/api/client
+
+Response:
+
+	[
+	  {
+	    "telephone": 31994726273,
+	    "name": "Anthony Edward Stark Jr.",
+	    "created_at": "2019-06-28 01:33:13",
+	    "updated_at": "2019-06-28 01:33:13"
+	  },
+	  {
+	    "telephone": 99314726273,
+	    "name": "Wade Winston Wilson",
+	    "created_at": "2019-06-28 01:36:11",
+	    "updated_at": "2019-06-28 01:36:11"
+	  }
+	]
+
+### GET /client/telephone
+
+- Exibir
+
+	- Example: http://localhost:8000/api/client/31994726273
+
+Response:
+
+	{
+	  "telephone": 31994726273,
+	  "name": "Anthony Edward Stark Jr.",
+	  "created_at": "2019-06-28 01:33:13",
+	  "updated_at": "2019-06-28 01:33:13"
+	}
+	
+### PUT /client/telephone
+
+- Atualizar
+	
+	- Example: http://localhost:8000/api/client/31994726273
+
+Response:
+
+	{  
+	   "name":"Tony Stark"
+	}
+
+
+### DELETE /client/telephone
+
+- Remover
+
+	- Example: http://localhost:8000/api/client/31994726273
+
+Response:
+
+	status code 200
+
+### /order
+
+### POST /order
+
+- Criar
+
+	- Example: http://localhost:8000/api/order
+
+
+
+Request:
+
+	 {  
+	   "client_telephone":"99314726273",
+	   "addresses":"10880, Malibu Point, 90265, Malibu , LA , Califórnia",
+	   "items":[  
+	      {  
+		 "product_id":1,
+		 "quantity":1,
+		 "flavors_id":1
+	      },
+	      {  
+		 "product_id":1,
+		 "quantity":1,
+		 "flavors_id":3
+	      },
+	      {  
+		 "product_id":4,
+		 "quantity":1
+	      }
+	   ]
+	}
+### GET /order
+
+- Listar todos
+
+	- Example: http://localhost:8000/api/order
+
+Response:
+
+	[	 
+	  {
+	    "id": 1,
+	    "client_telephone": 31994726273,
+	    "addresses": "10880, Malibu Point, 90265, Malibu , LA , Califórnia",
+	    "total_price": 30,
+	    "created_at": "2019-06-28 02:05:27",
+	    "updated_at": "2019-06-28 02:05:27"
+	  },
+	  {
+	    "id": 2,
+	    "client_telephone": 99314726273,
+	    "addresses": "200 Park Avenue, Manhattan , NY,
+	    "total_price": 40,
+	    "created_at": "2019-06-28 02:09:27",
+	    "updated_at": "2019-06-28 02:09:27"
+	  },
+	]
+
+### GET /order/id
+
+- Exibir
+
+	- Example: http://localhost:8000/api/order/1
+
+Response:
+
+	{
+	  "order_id": 1,
+	  "client_id": 99314726273,
+	  "total_price": 30,
+	  "items": [
+	    {
+	      "name": "Pizza Grande",
+	      "flavor": "mussarela",
+	      "price": 10,
+	      "quantity": 1
+	    },
+	    {
+	      "name": "Pizza Grande",
+	      "flavor": "portuguesa",
+	      "price": 10,
+	      "quantity": 1
+	    },
+	    {
+	      "name": "Coca Cola 2L",
+	      "flavor": null,
+	      "price": 10,
+	      "quantity": 1
+	    }
+	  ]
+	}
+
+### DELETE /order/id
+
+- Remover
+
+	- Example: http://localhost:8000/api/order/id
+
+Response:
+
+	status code 200
